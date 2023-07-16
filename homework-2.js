@@ -84,3 +84,19 @@ try {
   console.log(e.message)
 }
 
+/* Function task 3*/
+
+function genericFunction (func) {
+  try {
+    func();
+  } catch (e) {
+    console.log(e.message);
+  }
+}
+
+function sayHello () {
+  console.log('Hello World');
+}
+
+genericFunction(sayHello);
+
