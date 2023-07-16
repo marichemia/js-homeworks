@@ -43,5 +43,44 @@ function getDivisors(num){
 
 }
 
+const number = 12;
+
+try {
+  console.log(getDivisors (number));
+} catch (e) {
+  console.log(e.message)
+}
+
+
 /* Functions task 2 */
+
+function f (arr){
+	
+  if (!Array.isArray(arr)) {
+    throw new Error ('parameter type should be an array');
+  }
+  
+  if (arr.length === 0) {
+    throw new Error ('parameter cant be an empty');
+  }
+  
+  for (let i of arr) {
+    if (typeof i !== 'number') {
+      throw new Error ('parameter type should be array of numbers');
+    }
+  }
+
+  for (let i of arr) {
+    console.log(i);
+  }
+
+}
+
+const array = [1, 2, 3];
+
+try {
+  f (array);
+} catch (e) {
+  console.log(e.message)
+}
 
