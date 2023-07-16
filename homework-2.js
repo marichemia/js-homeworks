@@ -21,3 +21,27 @@ try {
 
 /* Functions task 1 */
 
+function getDivisors(num){
+	
+  if (typeof num !== 'number') {
+    throw new Error ('parameter type is not a Number')
+  }
+
+  if (num <= 0) {
+    throw new Error ('parameter cannot be equal to or less than 0');
+  }
+
+  const divisors = [];
+
+  for (let i=0; i<=num; i++) {
+    if (num % i === 0) {
+      divisors.push(i);
+    }
+  }
+
+  return divisors;
+
+}
+
+/* Functions task 2 */
+
