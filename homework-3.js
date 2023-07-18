@@ -20,3 +20,17 @@ function f(arr) {
     add(arr);
     return sum;
 }
+
+
+/* Arrays task 2 */
+
+function reverse(arr) {
+  if (!Array.isArray(arr)) {
+        throw new Error("invalid input, parameter must be an array");
+    }
+
+
+    arr.sort((a, b) => arr.indexOf(b) - arr.indexOf(a));
+
+    return arr;
+}
