@@ -34,3 +34,31 @@ function reverse(arr) {
 
     return arr;
 }
+
+
+/* Array task 3 */
+
+function rotate(arr, num, str = 'right') {
+  if (!Array.isArray(arr)) {
+        throw new Error("invalid input, arr must be an array");
+    }
+
+  if (typeof num !== 'number') {
+        throw new Error("invalid input, num must be a number");
+    }
+
+  if (typeof str !== 'string') {
+        throw new Error("invalid input, str must be a string");
+    }
+
+
+    for (let i = 0; i < num % arr.length; i++) {
+      if (str === 'right') {
+        arr.unshift(arr.pop());
+      } else if (str === 'left') {
+        arr.push(arr.shift());      }
+    }
+
+    return arr;
+}
+
