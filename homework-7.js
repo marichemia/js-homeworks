@@ -46,6 +46,33 @@ class MyString {
 
 }
 
+/* Classes Task 3 */
+
+class User {
+  constructor (name, surname) {
+    this.name = name;
+    this.surname = surname;
+  }
+
+  getFullName() {
+    return `${this.name} ${this.surname}`;
+  }
+}
+
+
+class Student extends User {
+  constructor (name, surname, year) {
+    super (name, surname);
+    if (year < 2018) throw new Error ('Year of admission should be 2018 or later');
+    this.year = year;   
+  }
+
+  getCourse() {
+    return new Date().getFullYear() - this.year;
+  }
+
+}
+
 
 
 
