@@ -73,6 +73,31 @@ class Student extends User {
 
 }
 
+/* OOP Part 2 Task 1 */
+
+Function.prototype.delay = function(ms) {
+  const originalFunction = this;
+
+  return function(...args) {
+    setTimeout(function() {
+      originalFunction(...args);
+    }, ms);
+  };
+};
+
+
+/* OOP Part 2 Task 2 */
+
+function Hamster() {
+  this.food = [];
+}
+
+Hamster.prototype.found = function(something) {
+  this.food.push(something);
+};
+
+
+
 
 
 
