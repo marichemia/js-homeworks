@@ -84,3 +84,42 @@ class DB {
 }
 
 /* Map Task 2 */
+
+DB.prototype.find =  function (query) {
+  if (typeof query !== 'object' || Array.isArray(query)) {
+    throw new Error ('invalid input')
+  }
+
+  console.log(Array.from(this.map.entries()))
+  const dataArr = Array.from(this.map.entries());
+
+  return  dataArr.filter(([id, user]) => {
+    if (query.name !== user.name && query.name) {
+      return false;
+    } else if (query.country !== user.country && query.country) {
+      return false;
+    } else if (query.age.min && query.age.max) {
+      if (user.age < query.age.min || user.age > query.age.max) {
+        return false;
+      }
+    }  else if (query.age.min && user.age < query.age.min) {
+      return false;
+    } else if (query.age.max && user.age > query.age.max) {
+      return false;
+    } else if (query.salary.min && query.salary.max) {
+      if (user.salary < query.salary.min || user.salary > query.salary.max) {
+        return false;
+      }
+    }  else if (query.salary.min && user.salary < query.salary.min) {
+      return false;
+    } else if (query.salary.max && user.salary > query.salary.max) {
+      return false;
+    } else  {
+      return true;
+    }
+
+    
+
+
+  })
+}
